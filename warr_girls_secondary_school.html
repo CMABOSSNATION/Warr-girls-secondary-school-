@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sts. Peter & Paul Warr Girls Secondary School – Zombo, Uganda</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rose:     #8B1A4A;
+  --deep:     #6B0F38;
+  --pink:     #C4547A;
+  --gold:     #C8962E;
+  --gold2:    #E8B84A;
+  --navy:     #0E1A2E;
+  --teal:     #0E5A5A;
+  --ivory:    #FAF8F5;
+  --cream:    #F7F2EB;
+  --parch:    #EDE5D5;
+  --white:    #FFFFFF;
+  --charcoal: #1C1C2E;
+  --gray:     #6B7280;
+  --lgray:    #F2EDE8;
+  --wa:       #25D366;
+  --wa2:      #128C7E;
+  --purple:   #4A1560;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito Sans',sans-serif;background:var(--ivory);color:var(--charcoal);overflow-x:hidden;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--navy);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes zoomBg{from{transform:scale(1);}to{transform:scale(1.07);}}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5);}70%{box-shadow:0 0 0 16px rgba(37,211,102,0);}}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+@keyframes bloom{0%,100%{transform:scale(1) rotate(0deg);}50%{transform:scale(1.08) rotate(3deg);}}
+@keyframes waPop{0%{transform:scale(.7);}70%{transform:scale(1.1);}100%{transform:scale(1);}}
+@keyframes shine{0%{left:-100%;}100%{left:200%;}}
+
+/* ══ TICKER ════════════════════════════════════ */
+.ticker{background:linear-gradient(90deg,var(--rose),var(--deep));padding:9px 0;overflow:hidden;white-space:nowrap;position:relative;z-index:1001;}
+.ticker-label{position:absolute;left:0;top:0;bottom:0;background:var(--gold);color:var(--navy);font-weight:800;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;padding:0 14px;z-index:2;}
+.ticker-track{display:inline-flex;animation:ticker 32s linear infinite;padding-left:130px;}
+.ticker-track span{padding:0 36px;font-size:.79rem;color:rgba(255,255,255,.9);font-weight:500;}
+.ticker-track span::before{content:'❀ ';color:var(--gold2);}
+
+/* ══ TOPBAR ════════════════════════════════════ */
+.topbar{background:var(--navy);color:rgba(255,255,255,.7);font-size:.77rem;padding:7px 5vw;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;}
+.tb-left{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+.topbar a{color:var(--gold2);text-decoration:none;transition:.2s;}
+.topbar a:hover{color:white;}
+.tb-right{display:flex;gap:10px;align-items:center;}
+.wa-pill-sm{display:flex;align-items:center;gap:6px;background:var(--wa);color:white;padding:4px 12px;border-radius:20px;font-size:.74rem;font-weight:700;text-decoration:none;transition:.25s;animation:pulse 2.5s infinite;}
+.wa-pill-sm:hover{background:var(--wa2);color:white;}
+.tb-ic{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.72rem;text-decoration:none;color:rgba(255,255,255,.65);transition:.25s;}
+.tb-ic:hover{background:var(--gold);color:var(--navy);}
+
+/* ══ NAVBAR ════════════════════════════════════ */
+nav{position:sticky;top:0;z-index:999;background:rgba(250,248,245,.97);backdrop-filter:blur(18px);border-bottom:3px solid var(--rose);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:74px;box-shadow:0 4px 28px rgba(139,26,74,.1);}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.nav-flower{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--deep));display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(139,26,74,.35);position:relative;flex-shrink:0;animation:bloom 8s ease-in-out infinite;}
+.nav-flower::before{content:'';position:absolute;inset:3px;border-radius:50%;border:1.5px solid rgba(232,184,74,.5);}
+.nav-flower span{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:var(--gold2);position:relative;z-index:1;}
+.nav-brand{line-height:1.15;}
+.nav-brand strong{display:block;font-family:'Cinzel',serif;font-size:.92rem;font-weight:700;color:var(--rose);}
+.nav-brand em{font-style:normal;font-size:.66rem;color:var(--gold);font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+.nav-links{display:flex;list-style:none;gap:2px;align-items:center;}
+.nav-links a{color:var(--charcoal);text-decoration:none;font-size:.84rem;font-weight:600;padding:7px 13px;border-radius:6px;transition:.25s;position:relative;}
+.nav-links a:hover{color:var(--rose);}
+.nav-wa{background:var(--wa)!important;color:white!important;font-weight:700!important;padding:8px 18px!important;border-radius:25px!important;display:flex!important;align-items:center!important;gap:6px!important;}
+.nav-wa:hover{background:var(--wa2)!important;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.35)!important;}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.ham span{width:24px;height:2px;background:var(--rose);border-radius:2px;transition:.3s;}
+.mob-menu{display:none;flex-direction:column;gap:4px;position:fixed;top:74px;left:0;right:0;background:var(--ivory);z-index:998;padding:18px 5vw;box-shadow:0 8px 28px rgba(0,0,0,.12);border-top:1px solid rgba(139,26,74,.1);}
+.mob-menu a{color:var(--charcoal);text-decoration:none;font-size:.9rem;font-weight:600;padding:11px 14px;border-radius:8px;transition:.2s;display:block;}
+.mob-menu a:hover{background:var(--lgray);color:var(--rose);}
+.mob-menu .wa-m{background:var(--wa);color:white;font-weight:700;margin-top:8px;border-radius:8px;text-align:center;}
+
+/* ══ HERO ══════════════════════════════════════ */
+.hero{height:100vh;min-height:680px;position:relative;display:flex;align-items:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(130deg,rgba(14,26,46,.93) 0%,rgba(139,26,74,.76) 55%,rgba(74,21,96,.85) 100%),url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=1800&q=90') center/cover no-repeat;animation:zoomBg 22s ease-in-out infinite alternate;}
+.hero-petals{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(232,184,74,.06) 1px,transparent 1px);background-size:50px 50px;z-index:1;}
+.hero-content{position:relative;z-index:3;max-width:820px;padding:0 7vw;animation:fadeUp 1.2s ease forwards;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(200,150,46,.15);border:1px solid rgba(200,150,46,.4);color:var(--gold2);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 18px;border-radius:30px;margin-bottom:24px;}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:var(--gold2);animation:float 2s ease-in-out infinite;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6.5vw,5.8rem);font-weight:700;color:white;line-height:1.05;margin-bottom:10px;text-shadow:0 4px 30px rgba(0,0,0,.4);}
+.hero h1 .rose{color:var(--gold2);}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.3vw,1.5rem);color:rgba(255,255,255,.72);font-style:italic;margin-bottom:16px;letter-spacing:.03em;}
+.hero-motto{display:inline-flex;align-items:center;gap:8px;background:rgba(139,26,74,.6);border:1px solid rgba(232,184,74,.3);color:var(--gold2);font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;padding:8px 20px;border-radius:30px;margin-bottom:36px;backdrop-filter:blur(8px);}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-rose{background:linear-gradient(135deg,var(--rose),var(--deep));color:white;font-weight:700;font-size:.87rem;letter-spacing:.06em;text-transform:uppercase;padding:15px 36px;border-radius:3px;text-decoration:none;border:none;cursor:pointer;transition:.3s;display:inline-flex;align-items:center;gap:8px;position:relative;overflow:hidden;}
+.btn-rose::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transition:left .5s;}
+.btn-rose:hover::before{left:100%;}
+.btn-rose:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(139,26,74,.5);}
+.btn-wa-hero{background:var(--wa);color:white;font-weight:700;font-size:.87rem;letter-spacing:.04em;padding:14px 32px;border-radius:3px;text-decoration:none;transition:.3s;display:inline-flex;align-items:center;gap:8px;}
+.btn-wa-hero:hover{background:var(--wa2);transform:translateY(-3px);box-shadow:0 14px 40px rgba(37,211,102,.4);}
+/* hero side card */
+.hero-card{position:absolute;right:6vw;top:50%;transform:translateY(-50%);z-index:3;background:rgba(14,26,46,.88);backdrop-filter:blur(14px);border:1px solid rgba(232,184,74,.3);border-radius:14px;padding:28px 30px;min-width:230px;animation:fadeIn 1.5s .6s forwards;opacity:0;}
+.hc-title{font-family:'Cinzel',serif;font-size:.72rem;color:var(--gold2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.hc-title::before{content:'❀';color:var(--pink);}
+.hc-row{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.hc-row:last-child{border-bottom:none;}
+.hc-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px;}
+.hc-text strong{display:block;font-size:.8rem;color:white;font-weight:600;}
+.hc-text span{font-size:.7rem;color:rgba(255,255,255,.5);}
+/* stats bar */
+.stats-bar{position:absolute;bottom:0;left:0;right:0;z-index:3;display:flex;background:rgba(139,26,74,.88);backdrop-filter:blur(12px);border-top:1px solid rgba(232,184,74,.25);}
+.sb-item{flex:1;padding:16px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.08);}
+.sb-item:last-child{border-right:none;}
+.sb-item strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--gold2);line-height:1;}
+.sb-item span{font-size:.67rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.08em;margin-top:3px;display:block;}
+
+/* ══ SECTIONS ══════════════════════════════════ */
+section{padding:88px 6vw;}
+.eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.eyebrow::before{content:'';width:26px;height:2px;background:var(--gold);}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.8vw,3.1rem);font-weight:700;color:var(--rose);line-height:1.18;margin-bottom:18px;}
+.sec-title .it{font-style:italic;color:var(--deep);}
+.sec-desc{font-size:1rem;color:var(--gray);line-height:1.82;max-width:600px;font-weight:300;}
+.rose-bar{width:50px;height:3.5px;background:linear-gradient(90deg,var(--rose),var(--gold));border-radius:2px;margin:16px 0 28px;}
+.center-hdr{text-align:center;}
+.center-hdr .eyebrow{justify-content:center;}
+.center-hdr .eyebrow::before{display:none;}
+.center-hdr .rose-bar{margin:16px auto 28px;}
+
+/* ══ ABOUT ═════════════════════════════════════ */
+.about-sec{background:var(--cream);padding:0;}
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;min-height:640px;}
+.about-visual{position:relative;overflow:hidden;}
+.about-visual img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s ease;}
+.about-visual:hover img{transform:scale(1.04);}
+.about-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(139,26,74,.2),transparent 60%);}
+.est-badge{position:absolute;bottom:28px;left:28px;background:rgba(14,26,46,.93);border:1px solid rgba(232,184,74,.5);backdrop-filter:blur(10px);color:white;padding:18px 22px;border-radius:10px;text-align:center;}
+.est-badge strong{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--gold2);display:block;line-height:1;}
+.est-badge span{font-size:.67rem;color:rgba(255,255,255,.6);letter-spacing:.12em;text-transform:uppercase;}
+.school-code{position:absolute;top:24px;right:24px;background:var(--rose);color:white;font-weight:800;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:25px;border:2px solid var(--gold2);}
+.about-text{padding:70px 62px;display:flex;flex-direction:column;justify-content:center;background:var(--ivory);}
+.blockquote{border-left:4px solid var(--gold);background:var(--cream);padding:16px 20px;border-radius:0 10px 10px 0;margin:22px 0;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--rose);line-height:1.7;}
+.about-facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;}
+.fact{padding:16px 18px;background:var(--white);border-radius:10px;border-top:3px solid var(--gold);box-shadow:0 2px 14px rgba(0,0,0,.05);transition:.3s;}
+.fact:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.1);border-top-color:var(--rose);}
+.fact-em{font-size:1.5rem;margin-bottom:6px;}
+.fact h4{font-weight:700;font-size:.88rem;color:var(--rose);margin-bottom:2px;}
+.fact p{font-size:.78rem;color:var(--gray);}
+
+/* ══ GIRL CHILD MISSION ════════════════════════ */
+.mission-sec{background:linear-gradient(rgba(14,26,46,.94),rgba(139,26,74,.88)),url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1600&q=85') center/cover fixed;color:white;padding:96px 6vw;text-align:center;position:relative;overflow:hidden;}
+.mission-sec::before{content:'♀';position:absolute;top:-60px;right:-40px;font-size:28rem;color:rgba(255,255,255,.02);pointer-events:none;}
+.mission-sec .eyebrow{justify-content:center;color:var(--gold2);}
+.mission-sec .eyebrow::before{background:var(--gold2);}
+.mission-sec .sec-title{color:white;}
+.mission-sec .sec-title .it{color:var(--gold2);}
+.mission-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px;}
+.mc{padding:32px 26px;background:rgba(255,255,255,.06);border:1px solid rgba(232,184,74,.25);border-radius:12px;backdrop-filter:blur(8px);transition:.4s;}
+.mc:hover{background:rgba(232,184,74,.1);border-color:var(--gold2);transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.3);}
+.mc-icon{width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--deep));display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 18px;box-shadow:0 8px 24px rgba(139,26,74,.5);}
+.mc h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--gold2);margin-bottom:10px;}
+.mc p{font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.75;font-weight:300;}
+
+/* ══ ALUMNI ════════════════════════════════════ */
+.alumni-sec{background:var(--ivory);}
+.alumni-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px;}
+.alumni-card{background:var(--white);border-radius:14px;padding:28px 24px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-bottom:4px solid var(--gold);transition:.4s;position:relative;overflow:hidden;}
+.alumni-card::before{content:'❀';position:absolute;top:-10px;right:12px;font-size:4rem;color:var(--rose);opacity:.06;pointer-events:none;}
+.alumni-card:hover{transform:translateY(-8px);box-shadow:0 22px 54px rgba(0,0,0,.1);border-bottom-color:var(--rose);}
+.alumni-emoji{font-size:2rem;margin-bottom:10px;}
+.alumni-card h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--rose);margin-bottom:4px;}
+.alumni-role{font-size:.72rem;color:var(--gold);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;display:block;}
+.alumni-card p{font-size:.84rem;color:var(--gray);line-height:1.6;}
+
+/* ══ ACADEMICS ═════════════════════════════════ */
+.academics-sec{background:var(--cream);}
+.academics-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:68px;align-items:start;}
+.subjects{display:grid;gap:12px;margin-top:24px;}
+.subj-row{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--white);border-radius:10px;border-left:4px solid var(--gold);box-shadow:0 2px 12px rgba(0,0,0,.05);transition:.3s;cursor:default;}
+.subj-row:hover{border-left-color:var(--rose);transform:translateX(6px);box-shadow:0 6px 24px rgba(0,0,0,.09);}
+.si{font-size:1.3rem;flex-shrink:0;}
+.sinfo h4{font-weight:700;font-size:.9rem;color:var(--rose);}
+.sinfo p{font-size:.77rem;color:var(--gray);}
+.sb{margin-left:auto;background:var(--rose);color:white;font-size:.61rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:20px;flex-shrink:0;}
+.level-row{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap;}
+.lvl{padding:8px 20px;border-radius:25px;font-size:.82rem;font-weight:700;border:2px solid var(--rose);cursor:pointer;transition:.25s;text-decoration:none;color:var(--rose);}
+.lvl:hover,.lvl.active{background:var(--rose);color:white;}
+.img-box{border-radius:14px;overflow:hidden;box-shadow:0 16px 50px rgba(139,26,74,.15);border:4px solid var(--gold);margin-bottom:24px;}
+.img-box img{width:100%;height:270px;object-fit:cover;display:block;}
+.clubs-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.club{background:var(--rose);color:white;font-size:.73rem;font-weight:700;padding:6px 14px;border-radius:20px;display:inline-flex;align-items:center;gap:5px;transition:.25s;}
+.club:hover{background:var(--deep);transform:translateY(-2px);}
+
+/* ══ GALLERY ═══════════════════════════════════ */
+.gallery-sec{background:var(--navy);padding:80px 0;}
+.gal-header{padding:0 6vw;margin-bottom:38px;}
+.gal-header .sec-title{color:white;}
+.gal-header .eyebrow{color:var(--gold2);}
+.gal-header .eyebrow::before{background:var(--gold2);}
+.gal-masonry{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:10px;padding:0 6vw;}
+.gm{border-radius:10px;overflow:hidden;position:relative;cursor:pointer;transition:transform .3s;}
+.gm:hover{transform:scale(1.02);z-index:2;}
+.gm.tall{grid-row:span 2;}
+.gm.wide{grid-column:span 2;}
+.gm img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s;}
+.gm:hover img{transform:scale(1.07);}
+.gm-cap{position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(139,26,74,.88));opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:16px;}
+.gm:hover .gm-cap{opacity:1;}
+.gm-cap span{color:white;font-weight:700;font-size:.83rem;font-family:'Cormorant Garamond',serif;}
+.gal-hint{padding:22px 6vw 0;text-align:center;color:rgba(255,255,255,.45);font-size:.84rem;}
+.gal-hint a{color:var(--gold2);text-decoration:none;font-weight:700;}
+
+/* ══ FACILITIES ════════════════════════════════ */
+.facilities-sec{background:var(--ivory);}
+.fac-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:68px;align-items:center;}
+.fac-imgs{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:260px 180px;gap:12px;}
+.fi{border-radius:14px;overflow:hidden;position:relative;}
+.fi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
+.fi:hover img{transform:scale(1.06);}
+.fi.tall{grid-row:span 2;}
+.fi-lbl{position:absolute;bottom:10px;left:10px;background:rgba(14,26,46,.8);color:var(--gold2);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px;}
+.fac-list{display:grid;gap:16px;margin-top:28px;}
+.fac-item{display:flex;align-items:center;gap:14px;padding:15px 18px;background:var(--white);border-radius:10px;box-shadow:0 2px 14px rgba(0,0,0,.05);border-left:4px solid transparent;transition:.3s;}
+.fac-item:hover{border-left-color:var(--gold);transform:translateX(6px);box-shadow:0 6px 26px rgba(0,0,0,.09);}
+.fac-ic{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--rose),var(--deep));display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.fac-info h4{font-weight:700;font-size:.9rem;color:var(--rose);}
+.fac-info p{font-size:.78rem;color:var(--gray);}
+
+/* ══ TESTIMONIALS ══════════════════════════════ */
+.testi-sec{background:var(--parch);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px;}
+.testi-card{background:var(--white);border-radius:14px;padding:30px 26px;box-shadow:0 4px 26px rgba(0,0,0,.06);border-bottom:3px solid var(--gold);transition:.4s;position:relative;}
+.testi-card:hover{transform:translateY(-7px);box-shadow:0 22px 52px rgba(0,0,0,.1);}
+.tq{font-family:'Cormorant Garamond',serif;font-size:4.5rem;color:var(--rose);opacity:.12;position:absolute;top:4px;left:14px;line-height:1;pointer-events:none;}
+.testi-stars{color:var(--gold);font-size:.9rem;margin-bottom:12px;letter-spacing:2px;}
+.testi-text{font-family:'Cormorant Garamond',serif;font-size:1.02rem;line-height:1.75;color:var(--charcoal);font-style:italic;margin-bottom:20px;}
+.t-author{display:flex;align-items:center;gap:12px;}
+.t-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--deep));display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-weight:700;color:white;font-size:.95rem;flex-shrink:0;}
+.t-info strong{display:block;font-size:.88rem;color:var(--rose);font-weight:700;}
+.t-info span{font-size:.74rem;color:var(--gray);}
+
+/* ══ NEWS ══════════════════════════════════════ */
+.news-sec{background:var(--ivory);}
+.news-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;}
+.news-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:22px;}
+.nc{background:var(--white);border-radius:14px;overflow:hidden;box-shadow:0 4px 22px rgba(0,0,0,.06);transition:.4s;border:1px solid rgba(0,0,0,.04);}
+.nc:hover{transform:translateY(-7px);box-shadow:0 22px 52px rgba(0,0,0,.11);}
+.nc-img{overflow:hidden;position:relative;}
+.nc-img img{width:100%;object-fit:cover;display:block;transition:transform .5s;}
+.nc:hover .nc-img img{transform:scale(1.06);}
+.nc.feat .nc-img img{height:240px;}
+.nc:not(.feat) .nc-img img{height:155px;}
+.nc-tag{position:absolute;top:12px;left:12px;background:var(--rose);color:white;font-size:.63rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:20px;}
+.nc-body{padding:20px;}
+.nc-date{font-size:.7rem;color:var(--gray);margin-bottom:6px;}
+.nc-body h3{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--rose);margin-bottom:8px;line-height:1.3;}
+.nc.feat .nc-body h3{font-size:1.2rem;}
+.nc:not(.feat) .nc-body h3{font-size:.98rem;}
+.nc-body p{font-size:.83rem;color:var(--gray);line-height:1.6;}
+.nc-link{display:inline-flex;align-items:center;gap:5px;color:var(--gold);font-size:.79rem;font-weight:700;text-decoration:none;margin-top:11px;transition:gap .3s;}
+.nc-link:hover{gap:10px;}
+
+/* ══ ADMISSIONS CTA ════════════════════════════ */
+.adm-sec{background:linear-gradient(135deg,var(--rose) 0%,var(--purple) 100%);padding:90px 6vw;text-align:center;position:relative;overflow:hidden;}
+.adm-sec::before{content:'♀ ♀ ♀';position:absolute;bottom:-30px;right:20px;font-size:12rem;color:rgba(255,255,255,.03);pointer-events:none;letter-spacing:20px;}
+.adm-sec .eyebrow{justify-content:center;color:var(--gold2);}
+.adm-sec .eyebrow::before{background:var(--gold2);}
+.adm-sec .sec-title{color:white;text-align:center;}
+.adm-sec .sec-title .it{color:var(--gold2);}
+.adm-sec p{color:rgba(255,255,255,.72);font-size:1.05rem;max-width:580px;margin:0 auto 40px;line-height:1.8;}
+.adm-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-weight:800;font-size:.88rem;letter-spacing:.05em;text-transform:uppercase;padding:15px 36px;border-radius:3px;text-decoration:none;transition:.3s;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(200,150,46,.5);}
+.adm-pills{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px;}
+.adm-pill{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.82);font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:25px;backdrop-filter:blur(8px);}
+
+/* ══ CONTACT ═══════════════════════════════════ */
+.contact-sec{background:var(--cream);}
+.contact-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:58px;align-items:start;}
+.c-cards{display:grid;gap:14px;margin-top:28px;}
+.c-card{display:flex;align-items:flex-start;gap:14px;padding:17px 20px;background:var(--white);border-radius:12px;box-shadow:0 2px 14px rgba(0,0,0,.05);text-decoration:none;color:inherit;transition:.3s;border-left:4px solid var(--gold);}
+.c-card:hover{transform:translateX(6px);box-shadow:0 8px 28px rgba(0,0,0,.09);border-left-color:var(--rose);}
+.c-ic{width:43px;height:43px;border-radius:10px;background:linear-gradient(135deg,var(--rose),var(--deep));display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.c-card h4{font-size:.69rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;}
+.c-card p{font-size:.91rem;color:var(--charcoal);font-weight:500;line-height:1.5;}
+.social-row2{margin-top:22px;}
+.social-row2 h4{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:700;color:var(--rose);margin-bottom:12px;}
+.soc-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.soc{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:25px;font-size:.77rem;font-weight:700;text-decoration:none;transition:.3s;}
+.soc-fb{background:#1877F2;color:white;}
+.soc-fb:hover{background:#0d5fd4;transform:translateY(-3px);}
+.soc-wa{background:var(--wa);color:white;}
+.soc-wa:hover{background:var(--wa2);transform:translateY(-3px);}
+.soc-yt{background:#FF0000;color:white;}
+.soc-yt:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(255,0,0,.3);}
+.map-wrap{border-radius:14px;overflow:hidden;box-shadow:0 12px 46px rgba(139,26,74,.14);border:3px solid var(--gold);}
+.map-wrap iframe{display:block;width:100%;height:370px;border:none;}
+.map-footer{background:var(--navy);padding:13px 18px;display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.75);font-size:.81rem;}
+.map-footer span{color:var(--gold2);font-weight:700;}
+.wa-cta-card{margin-top:18px;background:linear-gradient(135deg,#075E54,#128C7E);border-radius:12px;padding:24px;border:2px solid var(--wa);}
+.wa-cta-card .wh{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.wa-cta-card .wh-icon{font-size:1.8rem;}
+.wa-cta-card .wh-text strong{display:block;color:white;font-weight:700;font-size:.95rem;}
+.wa-cta-card .wh-text span{color:rgba(255,255,255,.65);font-size:.76rem;}
+.wa-cta-card p{color:rgba(255,255,255,.72);font-size:.85rem;line-height:1.6;margin-bottom:16px;}
+.wa-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:white;font-weight:700;font-size:.85rem;padding:12px 24px;border-radius:3px;text-decoration:none;transition:.3s;text-transform:uppercase;letter-spacing:.04em;}
+.wa-cta-btn:hover{background:var(--wa2);}
+
+/* ══ FOOTER ════════════════════════════════════ */
+footer{background:var(--navy);color:rgba(255,255,255,.65);padding:62px 6vw 26px;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:46px;padding-bottom:46px;border-bottom:1px solid rgba(255,255,255,.08);}
+.f-logo-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.f-emblem{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--deep));display:flex;align-items:center;justify-content:center;border:2px solid rgba(232,184,74,.4);flex-shrink:0;}
+.f-emblem span{font-family:'Cinzel',serif;font-weight:700;font-size:1rem;color:var(--gold2);}
+.f-school{font-family:'Cormorant Garamond',serif;font-size:.98rem;font-weight:700;color:white;line-height:1.2;}
+.f-sub{font-size:.67rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;}
+.f-brand p{font-size:.85rem;line-height:1.75;max-width:255px;margin-bottom:18px;}
+.warr-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,150,46,.1);border:1px solid rgba(200,150,46,.3);color:var(--gold2);font-family:'Cormorant Garamond',serif;font-size:.8rem;font-style:italic;padding:7px 16px;border-radius:20px;}
+.f-col h5{font-family:'Cinzel',serif;font-size:.77rem;color:var(--gold2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(232,184,74,.2);}
+.f-col ul{list-style:none;display:grid;gap:10px;}
+.f-col ul a{color:rgba(255,255,255,.55);text-decoration:none;font-size:.85rem;transition:.25s;}
+.f-col ul a:hover{color:var(--gold2);padding-left:4px;}
+.footer-bottom{padding-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.76rem;color:rgba(255,255,255,.3);}
+.footer-bottom a{color:var(--gold);text-decoration:none;}
+
+/* ══ FLOATING WA ═══════════════════════════════ */
+.wa-float{position:fixed;bottom:26px;right:26px;z-index:9998;display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+.wa-tooltip2{background:var(--navy);color:white;font-size:.76rem;font-weight:600;padding:7px 14px;border-radius:20px;white-space:nowrap;box-shadow:0 4px 18px rgba(0,0,0,.2);display:none;animation:fadeIn .3s ease;}
+.wa-float:hover .wa-tooltip2{display:block;}
+.wa-fab{width:58px;height:58px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 26px rgba(37,211,102,.5);animation:pulse 2.5s infinite,waPop .5s ease;font-size:1.7rem;transition:.3s;}
+.wa-fab:hover{background:var(--wa2);transform:scale(1.1);}
+
+/* ══ LIGHTBOX ══════════════════════════════════ */
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:10000;display:none;align-items:center;justify-content:center;}
+.lb.on{display:flex;}
+.lb-inner{position:relative;}
+.lb-inner img{max-width:90vw;max-height:84vh;border-radius:8px;object-fit:contain;border:2px solid rgba(200,150,46,.35);}
+.lb-x{position:absolute;top:-38px;right:0;color:white;font-size:2rem;cursor:pointer;opacity:.7;transition:.2s;line-height:1;}
+.lb-x:hover{opacity:1;color:var(--gold2);}
+.lb-label{position:absolute;bottom:-34px;left:0;right:0;text-align:center;color:rgba(255,255,255,.55);font-size:.78rem;font-style:italic;}
+
+/* ══ SCROLL REVEAL ══════════════════════════════ */
+.rev{opacity:0;transform:translateY(36px);transition:opacity .85s ease,transform .85s ease;}
+.rev-l{opacity:0;transform:translateX(-36px);transition:opacity .85s ease,transform .85s ease;}
+.rev-r{opacity:0;transform:translateX(36px);transition:opacity .85s ease,transform .85s ease;}
+.rev.on,.rev-l.on,.rev-r.on{opacity:1;transform:none;}
+
+/* ══ RESPONSIVE ═════════════════════════════════ */
+@media(max-width:1000px){
+  .hero-card{display:none;}
+  .about-grid{grid-template-columns:1fr;}
+  .about-visual{height:300px;}
+  .about-text{padding:48px 6vw;}
+  .mission-cards{grid-template-columns:1fr;}
+  .alumni-grid{grid-template-columns:1fr 1fr;}
+  .academics-layout{grid-template-columns:1fr;}
+  .fac-layout{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:1fr;}
+  .news-grid{grid-template-columns:1fr;}
+  .contact-layout{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .gal-masonry{grid-template-columns:1fr 1fr;}
+  .gm.tall{grid-row:span 1;}
+  .gm.wide{grid-column:span 1;}
+  .nav-links{display:none;}
+  .ham{display:flex;}
+}
+@media(max-width:600px){
+  .alumni-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .adm-btns{flex-direction:column;align-items:center;}
+  .gal-masonry{grid-template-columns:1fr;}
+  .about-facts{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-label">📢 News</div>
+  <div class="ticker-track">
+    <span>2025 Admissions Open – S.1 &amp; S.5 Applications Now Accepted</span>
+    <span>Warr Girls Rising – Enrollment Growing, Girls Thriving!</span>
+    <span>School Code: 2360 | EMIS: 300258 | P.O. Box 15, Paidha-Nebbi</span>
+    <span>Rev. Fr. Alfred Agwokotho Leading School Revival</span>
+    <span>Enrollment Grew from 86 (2016) to 200+ Students</span>
+    <span>Warr Girls – Where West Nile Girls Discover Their Greatness</span>
+    <span>2025 Admissions Open – S.1 &amp; S.5 Applications Now Accepted</span>
+    <span>Warr Girls Rising – Enrollment Growing, Girls Thriving!</span>
+    <span>School Code: 2360 | EMIS: 300258 | P.O. Box 15, Paidha-Nebbi</span>
+    <span>Rev. Fr. Alfred Agwokotho Leading School Revival</span>
+    <span>Enrollment Grew from 86 (2016) to 200+ Students</span>
+    <span>Warr Girls – Where West Nile Girls Discover Their Greatness</span>
+  </div>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="tb-left">
+    <span>📍 Warr Sub-county, Kango, Okoro County, Zombo District</span>
+    <span>📮 P.O. Box 15, Paidha-Nebbi</span>
+    <span>🏫 EMIS Code: 300258</span>
+  </div>
+  <div class="tb-right">
+    <a href="https://wa.me/256700000000?text=Hello%20Warr%20Girls%20Secondary%20School%2C%20I%20would%20like%20to%20inquire%20about%20admissions." target="_blank" class="wa-pill-sm">💬 WhatsApp Us</a>
+    <a href="https://www.facebook.com" target="_blank" class="tb-ic">f</a>
+    <a href="#contact" class="tb-ic">✉</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-flower"><span>WG</span></div>
+    <div class="nav-brand">
+      <strong>Sts. Peter &amp; Paul Warr Girls</strong>
+      <em>Secondary School · Zombo, Uganda</em>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#academics">Academics</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#alumni">Alumni</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://wa.me/256700000000?text=Hello%20Warr%20Girls%2C%20I%20would%20like%20to%20inquire%20about%20admissions%202025." target="_blank" class="nav-wa">💬 WhatsApp</a></li>
+  </ul>
+  <div class="ham" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#about" onclick="toggleMenu()">About the School</a>
+  <a href="#academics" onclick="toggleMenu()">Academics</a>
+  <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+  <a href="#alumni" onclick="toggleMenu()">Alumni</a>
+  <a href="#news" onclick="toggleMenu()">News &amp; Events</a>
+  <a href="#contact" onclick="toggleMenu()">Contact &amp; Location</a>
+  <a href="https://wa.me/256700000000" target="_blank" class="wa-m">💬 Chat on WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-petals"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-dot"></div>
+      Sts. Peter &amp; Paul · Est. Warr, Zombo · Government Aided
+    </div>
+    <h1>Where <span class="rose">Girls</span><br>Find Their Wings</h1>
+    <p class="hero-sub">Sts. Peter &amp; Paul Warr Girls Senior Secondary School</p>
+    <div class="hero-motto">❀ "Empowering the Girl Child of West Nile"</div>
+    <div class="hero-btns">
+      <a href="#admissions" class="btn-rose">📚 Apply for Admission</a>
+      <a href="https://wa.me/256700000000?text=Hello%20Warr%20Girls%20Secondary%20School%2C%20I%20would%20like%20to%20inquire%20about%20admissions%20for%202025." target="_blank" class="btn-wa-hero">💬 WhatsApp Enquiry</a>
+    </div>
+  </div>
+
+  <!-- Side card -->
+  <div class="hero-card">
+    <div class="hc-title">Quick Facts</div>
+    <div class="hc-row"><span class="hc-icon">🏫</span><div class="hc-text"><strong>Girls Only Boarding</strong><span>Government Aided</span></div></div>
+    <div class="hc-row"><span class="hc-icon">✝️</span><div class="hc-text"><strong>Catholic Founded</strong><span>Sts. Peter &amp; Paul</span></div></div>
+    <div class="hc-row"><span class="hc-icon">📍</span><div class="hc-text"><strong>Warr, Zombo District</strong><span>West Nile, Uganda</span></div></div>
+    <div class="hc-row"><span class="hc-icon">📮</span><div class="hc-text"><strong>P.O. Box 15</strong><span>Paidha-Nebbi</span></div></div>
+    <div class="hc-row"><span class="hc-icon">🔢</span><div class="hc-text"><strong>EMIS: 300258</strong><span>School Code: 2360</span></div></div>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="stats-bar">
+    <div class="sb-item"><strong>S.1–S.6</strong><span>O &amp; A Level</span></div>
+    <div class="sb-item"><strong>200+</strong><span>Students</span></div>
+    <div class="sb-item"><strong>Girls Only</strong><span>Boarding School</span></div>
+    <div class="sb-item"><strong>Zombo</strong><span>West Nile, Uganda</span></div>
+    <div class="sb-item"><strong>Revival</strong><span>Underway 🌸</span></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div class="about-sec" id="about">
+  <div class="about-grid">
+    <div class="about-visual rev-l">
+      <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=88" alt="Warr Girls Secondary School">
+      <div class="about-overlay"></div>
+      <div class="school-code">EMIS: 300258</div>
+      <div class="est-badge"><strong>WG</strong><span>Warr Girls SS</span></div>
+    </div>
+    <div class="about-text rev-r">
+      <div class="eyebrow">Our Heritage</div>
+      <h2 class="sec-title">The <span class="it">Pride of West Nile</span> — Rising Again</h2>
+      <div class="rose-bar"></div>
+      <p class="sec-desc">
+        Sts. Peter and Paul Warr Girls Senior Secondary School is a government-aided, Catholic-founded girls' boarding secondary school located in Warr Sub-county, Kango, Okoro County, Zombo District — in Uganda's West Nile sub-region. Once the pride of West Nile, where <em>every girl's wish was to study here</em>, the school is now on a powerful path of revival.
+      </p>
+      <div class="blockquote">"Warr Girls gives the best opportunity for the girl child education given its affordable fees structure, human resource and available facilities." — Rev. Fr. Alfred Agwokotho</div>
+      <p class="sec-desc">Under the renewed leadership of <strong>Rev. Fr. Alfred Agwokotho</strong>, who was posted in 2016, enrollment has grown from just 86 students to over 200 — and the school continues to grow, supported by community leaders, civil society, and the Old Girls Association.</p>
+      <div class="about-facts">
+        <div class="fact"><div class="fact-em">♀</div><h4>Girls Only School</h4><p>Dedicated exclusively to empowering the girl child in West Nile</p></div>
+        <div class="fact"><div class="fact-em">✝️</div><h4>Catholic Founded</h4><p>Named after Sts. Peter and Paul — faith-based holistic education</p></div>
+        <div class="fact"><div class="fact-em">🏠</div><h4>Full Boarding</h4><p>Residential boarding with supervised study and care</p></div>
+        <div class="fact"><div class="fact-em">🌍</div><h4>West Nile Region</h4><p>9km northwest of Zombo town — serving the entire West Nile</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION / GIRL CHILD -->
+<div class="mission-sec">
+  <div class="eyebrow">Our Purpose</div>
+  <h2 class="sec-title">Mission, Vision &amp; <span class="it">Commitment to Girls</span></h2>
+  <div class="mission-cards rev">
+    <div class="mc"><div class="mc-icon">🎯</div><h3>Our Mission</h3><p>To provide quality, affordable, and holistic secondary education to girls from all walks of life in Zombo District and beyond — building confidence, character, and academic excellence.</p></div>
+    <div class="mc"><div class="mc-icon">🌟</div><h3>Our Vision</h3><p>To be the leading girls' secondary school in West Nile — producing academically excellent, morally upright, and confident women leaders who transform their communities.</p></div>
+    <div class="mc"><div class="mc-icon">♀</div><h3>Girl Child Focus</h3><p>We are committed to breaking barriers for girls in the West Nile region. Every girl deserves quality education — regardless of her family's economic background. Scholarships and bursaries are available.</p></div>
+  </div>
+</div>
+
+<!-- ALUMNI -->
+<section class="alumni-sec" id="alumni">
+  <div class="center-hdr rev">
+    <div class="eyebrow">Hall of Fame</div>
+    <h2 class="sec-title">Distinguished <span class="it">Alumni of Warr Girls</span></h2>
+    <div class="rose-bar"></div>
+    <p class="sec-desc" style="margin:0 auto;">Warr Girls has produced some of West Nile's most accomplished women — from parliament to the church, our alumni are transforming Uganda.</p>
+  </div>
+  <div class="alumni-grid rev">
+    <div class="alumni-card">
+      <div class="alumni-emoji">🏛️</div>
+      <h4>Ms. Grace Freedom Kwiyocwiny</h4>
+      <span class="alumni-role">State Minister for Northern Uganda</span>
+      <p>Current State Minister for Northern Uganda and Zombo District Woman Member of Parliament — a proud Warr Girls alumna leading national development.</p>
+    </div>
+    <div class="alumni-card">
+      <div class="alumni-emoji">⚖️</div>
+      <h4>Ms. Christine Acayo</h4>
+      <span class="alumni-role">Former Nebbi Woman MP</span>
+      <p>Former Member of Parliament for Nebbi Woman Representative — a distinguished political leader who passed through the halls of Warr Girls.</p>
+    </div>
+    <div class="alumni-card">
+      <div class="alumni-emoji">✝️</div>
+      <h4>Late Bishop Fredrick Drandua</h4>
+      <span class="alumni-role">Pioneer · Arua Diocese</span>
+      <p>Late Bishop of Arua Diocese — a pioneer student of the school when it was still a seminary. A towering spiritual figure from Warr.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMICS -->
+<section class="academics-sec" id="academics">
+  <div class="academics-layout">
+    <div class="rev-l">
+      <div class="eyebrow">Academic Programme</div>
+      <h2 class="sec-title">O &amp; A Level <span class="it">Curriculum</span></h2>
+      <div class="rose-bar"></div>
+      <p class="sec-desc">We follow the Uganda National Examinations Board (UNEB) curriculum, preparing girls for UCE and UACE across all key learning areas.</p>
+      <div class="level-row">
+        <a class="lvl active" href="#academics">O Level (S.1–S.4)</a>
+        <a class="lvl" href="#academics">A Level (S.5–S.6)</a>
+      </div>
+      <div class="subjects">
+        <div class="subj-row"><span class="si">🔬</span><div class="sinfo"><h4>Sciences</h4><p>Mathematics, Physics, Chemistry, Biology</p></div><span class="sb">Core</span></div>
+        <div class="subj-row"><span class="si">📖</span><div class="sinfo"><h4>Arts &amp; Humanities</h4><p>History, Geography, CRE, Literature in English</p></div><span class="sb">Core</span></div>
+        <div class="subj-row"><span class="si">💬</span><div class="sinfo"><h4>Languages</h4><p>English Language, Kiswahili</p></div><span class="sb">Core</span></div>
+        <div class="subj-row"><span class="si">💼</span><div class="sinfo"><h4>Commerce &amp; Economics</h4><p>Commerce, Economics, Entrepreneurship</p></div><span class="sb">Elective</span></div>
+        <div class="subj-row"><span class="si">🏠</span><div class="sinfo"><h4>Home Economics</h4><p>Food &amp; Nutrition, Home Management, Art</p></div><span class="sb">Elective</span></div>
+        <div class="subj-row"><span class="si">🖥️</span><div class="sinfo"><h4>ICT &amp; Computer Studies</h4><p>Computer Studies, Information Technology</p></div><span class="sb">Elective</span></div>
+      </div>
+    </div>
+    <div class="rev-r">
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=700&q=88" alt="Girls studying at Warr Girls Secondary School">
+      </div>
+      <div class="eyebrow" style="margin-top:8px;">Co-Curricular Activities</div>
+      <p class="sec-desc" style="margin-bottom:16px;">Our girls develop beyond the classroom through a rich programme of clubs, sports, and cultural activities.</p>
+      <div class="clubs-wrap">
+        <span class="club">⚽ Football</span>
+        <span class="club">🏐 Netball</span>
+        <span class="club">🏃 Athletics</span>
+        <span class="club">🏐 Volleyball</span>
+        <span class="club">✝️ Scripture Union</span>
+        <span class="club">🎵 Choir &amp; Music</span>
+        <span class="club">🎭 Drama Club</span>
+        <span class="club">✍️ Debating</span>
+        <span class="club">🌿 Young Farmers</span>
+        <span class="club">📚 Library Club</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<div class="gallery-sec" id="gallery">
+  <div class="gal-header rev">
+    <div class="eyebrow">Campus Life</div>
+    <h2 class="sec-title">School <span class="it">Gallery</span></h2>
+    <p style="color:rgba(255,255,255,.5);margin-top:8px;font-size:.88rem;">Click any image to view full size ✦ Life at Warr Girls</p>
+  </div>
+  <div class="gal-masonry rev">
+    <div class="gm tall" onclick="openLb(this,'Campus & School Grounds')">
+      <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=88" alt="Campus">
+      <div class="gm-cap"><span>School Campus</span></div>
+    </div>
+    <div class="gm" onclick="openLb(this,'Girls in Classroom')">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&q=88" alt="Classroom">
+      <div class="gm-cap"><span>Classroom Learning</span></div>
+    </div>
+    <div class="gm" onclick="openLb(this,'Science Laboratory')">
+      <img src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?w=500&q=88" alt="Lab">
+      <div class="gm-cap"><span>Science Laboratory</span></div>
+    </div>
+    <div class="gm tall" onclick="openLb(this,'School Chapel – Sts Peter & Paul')">
+      <img src="https://images.unsplash.com/photo-1538599785411-b9b21e04476b?w=600&q=88" alt="Chapel">
+      <div class="gm-cap"><span>School Chapel</span></div>
+    </div>
+    <div class="gm wide" onclick="openLb(this,'Sports & Athletics – Warr Girls')">
+      <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=800&q=88" alt="Sports">
+      <div class="gm-cap"><span>Sports Day &amp; Athletics</span></div>
+    </div>
+    <div class="gm" onclick="openLb(this,'School Library')">
+      <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=500&q=88" alt="Library">
+      <div class="gm-cap"><span>Library</span></div>
+    </div>
+    <div class="gm" onclick="openLb(this,'Dormitory & Boarding Life')">
+      <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=500&q=88" alt="Dorm">
+      <div class="gm-cap"><span>Boarding Facilities</span></div>
+    </div>
+    <div class="gm" onclick="openLb(this,'Girls Choir & Cultural Activities')">
+      <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=500&q=88" alt="Choir">
+      <div class="gm-cap"><span>Choir &amp; Culture</span></div>
+    </div>
+  </div>
+  <div class="gal-hint">Follow us on <a href="https://facebook.com" target="_blank">Facebook</a> for more photos from Warr Girls Secondary School</div>
+</div>
+
+<!-- FACILITIES -->
+<section class="facilities-sec" id="facilities">
+  <div class="fac-layout">
+    <div class="rev-l">
+      <div class="fac-imgs">
+        <div class="fi tall">
+          <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&q=88" alt="Main Block">
+          <div class="fi-lbl">Main Block</div>
+        </div>
+        <div class="fi">
+          <img src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?w=400&q=88" alt="Lab">
+          <div class="fi-lbl">Laboratory</div>
+        </div>
+        <div class="fi">
+          <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=400&q=88" alt="Sports">
+          <div class="fi-lbl">Sports Ground</div>
+        </div>
+      </div>
+    </div>
+    <div class="rev-r">
+      <div class="eyebrow">Infrastructure</div>
+      <h2 class="sec-title">Our <span class="it">Facilities</span></h2>
+      <div class="rose-bar"></div>
+      <p class="sec-desc">Warr Girls offers a safe, nurturing residential environment with facilities designed to support every girl's academic and personal development.</p>
+      <div class="fac-list">
+        <div class="fac-item"><div class="fac-ic">🔬</div><div class="fac-info"><h4>Science Laboratories</h4><p>Biology, Chemistry &amp; Physics labs for practical learning</p></div></div>
+        <div class="fac-item"><div class="fac-ic">📚</div><div class="fac-info"><h4>School Library</h4><p>Reading room with academic texts and reference materials</p></div></div>
+        <div class="fac-item"><div class="fac-ic">🏠</div><div class="fac-info"><h4>Girls Dormitories</h4><p>Safe, supervised boarding houses with 24-hour care</p></div></div>
+        <div class="fac-item"><div class="fac-ic">⚽</div><div class="fac-info"><h4>Sports Grounds</h4><p>Netball, football, volleyball &amp; athletics facilities</p></div></div>
+        <div class="fac-item"><div class="fac-ic">✝️</div><div class="fac-info"><h4>School Chapel</h4><p>Chapel of Sts. Peter &amp; Paul for spiritual formation &amp; prayer</p></div></div>
+        <div class="fac-item"><div class="fac-ic">🍽️</div><div class="fac-info"><h4>Dining Hall</h4><p>Nutritious meals served daily for all boarding students</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec">
+  <div class="center-hdr rev">
+    <div class="eyebrow">Community Voices</div>
+    <h2 class="sec-title">What They Say About <span class="it">Warr Girls</span></h2>
+    <div class="rose-bar"></div>
+  </div>
+  <div class="testi-grid rev">
+    <div class="testi-card">
+      <div class="tq">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">My daughter joined Warr Girls and I have seen a complete transformation. The teachers are dedicated and the school instills discipline and confidence. She passed UCE with Division One!</p>
+      <div class="t-author"><div class="t-av">A</div><div class="t-info"><strong>Adongo Margaret</strong><span>Parent · Zombo District</span></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="tq">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">Warr Girls changed my life. Growing up poor in Warr, I never thought I would go to university. The bursary scheme helped me complete my education. I am now a nurse in Kampala.</p>
+      <div class="t-author"><div class="t-av">O</div><div class="t-info"><strong>Ocaya Sandra</strong><span>Former Student · Class of 2021</span></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="tq">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">The spirit of Sts. Peter and Paul lives in this school. Affordable fees, caring staff, and a safe environment for our girls. West Nile is proud of what Warr Girls is becoming again!</p>
+      <div class="t-author"><div class="t-av">L</div><div class="t-info"><strong>Lemi Joseph</strong><span>Community Leader · Warr Sub-county</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news-sec" id="news">
+  <div class="news-hdr rev">
+    <div>
+      <div class="eyebrow">Latest Updates</div>
+      <h2 class="sec-title">News &amp; <span class="it">Events</span></h2>
+    </div>
+    <a href="#" class="btn-rose" style="font-size:.8rem;padding:11px 24px;">View All News</a>
+  </div>
+  <div class="news-grid rev">
+    <div class="nc feat">
+      <div class="nc-img">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=88" alt="Admissions">
+        <span class="nc-tag">📣 Admissions</span>
+      </div>
+      <div class="nc-body">
+        <p class="nc-date">📅 January 2025</p>
+        <h3>2025 Admissions Open — Applications Now Accepted for S.1 &amp; S.5</h3>
+        <p>Sts. Peter and Paul Warr Girls Secondary School invites applications for the 2025 academic year. We welcome bright, disciplined girls from across West Nile and Uganda. Affordable fees &amp; scholarship support available for needy students.</p>
+        <a href="#admissions" class="nc-link">Apply Now →</a>
+      </div>
+    </div>
+    <div class="nc">
+      <div class="nc-img">
+        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&q=85" alt="Enrollment">
+        <span class="nc-tag">📈 Growth</span>
+      </div>
+      <div class="nc-body">
+        <p class="nc-date">📅 2024</p>
+        <h3>Enrollment Surpasses 200 — Warr Girls Revival Continues</h3>
+        <p>Under Rev. Fr. Alfred Agwokotho, enrollment has grown from 86 in 2016 to over 200 students and rising.</p>
+        <a href="#about" class="nc-link">Read More →</a>
+      </div>
+    </div>
+    <div class="nc">
+      <div class="nc-img">
+        <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=400&q=85" alt="Sports">
+        <span class="nc-tag">⚽ Sports</span>
+      </div>
+      <div class="nc-body">
+        <p class="nc-date">📅 November 2024</p>
+        <h3>Warr Girls Shine at West Nile Regional Sports Competition</h3>
+        <p>Our netball and athletics teams represented Zombo District with pride at the West Nile Regional Inter-School Games.</p>
+        <a href="#gallery" class="nc-link">View Photos →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSIONS CTA -->
+<div class="adm-sec" id="admissions">
+  <div class="eyebrow">Join Warr Girls</div>
+  <h2 class="sec-title">Give Your Daughter the <span class="it">Best Foundation</span></h2>
+  <p>Admissions are open for 2025. Sts. Peter &amp; Paul Warr Girls Secondary School offers affordable boarding education for girls S.1 through S.6. Bursaries available for needy but academically gifted students. Don't miss out!</p>
+  <div class="adm-btns">
+    <a href="https://wa.me/256700000000?text=Hello%20Warr%20Girls%20Secondary%20School%2C%20I%20would%20like%20to%20apply%20for%20admission%20in%202025.%20Please%20send%20the%20requirements." target="_blank" class="btn-wa-hero" style="font-size:.9rem;padding:16px 36px;">💬 WhatsApp to Apply</a>
+    <a href="mailto:warrgirls@gmail.com?subject=Admission%20Enquiry%202025&body=Hello%20Warr%20Girls%20Secondary%20School%2C%0A%0AI%20would%20like%20to%20apply%20for%20admission%20for%20my%20daughter.%0A%0AStudent%20Name%3A%0AClass%20Applying%20For%3A%0AParent%20Name%20%26%20Contact%3A%0A%0AThank%20you." class="btn-gold">✉ Email Application</a>
+  </div>
+  <div class="adm-pills">
+    <div class="adm-pill">♀ Girls Only</div>
+    <div class="adm-pill">🏠 Full Boarding</div>
+    <div class="adm-pill">📚 S.1 – S.6</div>
+    <div class="adm-pill">💰 Affordable Fees</div>
+    <div class="adm-pill">🎓 Bursaries Available</div>
+    <div class="adm-pill">✝️ Catholic Values</div>
+    <div class="adm-pill">🌍 Government Aided</div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <div class="contact-layout">
+    <div class="rev-l">
+      <div class="eyebrow">Find &amp; Contact Us</div>
+      <h2 class="sec-title">Get in <span class="it">Touch</span></h2>
+      <div class="rose-bar"></div>
+      <p class="sec-desc">Warr Girls is located in Warr Sub-county, approximately 9km northwest of Zombo town — easily reachable from across West Nile and beyond.</p>
+      <div class="c-cards">
+        <a href="https://maps.google.com/?q=Warr+Girls+Secondary+School+Zombo+Uganda" target="_blank" class="c-card">
+          <div class="c-ic">📍</div>
+          <div><h4>Physical Address</h4><p>Warr Sub-county, Kango, Okoro County<br>Zombo District, West Nile, Uganda<br><small style="color:var(--gray);font-size:.76rem;">~9km northwest of Zombo town</small></p></div>
+        </a>
+        <div class="c-card">
+          <div class="c-ic">📮</div>
+          <div><h4>Postal Address</h4><p>P.O. Box 15, Paidha-Nebbi<br>Zombo District, Uganda</p></div>
+        </div>
+        <div class="c-card">
+          <div class="c-ic">🔢</div>
+          <div><h4>School Registration</h4><p>EMIS Code: 300258 | UNEB Code: 2360</p></div>
+        </div>
+        <a href="https://wa.me/256700000000" target="_blank" class="c-card" style="border-left-color:var(--wa);">
+          <div class="c-ic" style="background:var(--wa);">💬</div>
+          <div><h4>WhatsApp (Admissions)</h4><p>Chat instantly for admissions, fees &amp; enquiries</p></div>
+        </a>
+      </div>
+      <div class="social-row2">
+        <h4>Connect With Us</h4>
+        <div class="soc-btns">
+          <a href="https://facebook.com" target="_blank" class="soc soc-fb">f Facebook</a>
+          <a href="https://wa.me/256700000000" target="_blank" class="soc soc-wa">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="rev-r">
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126611.0!2d30.85!3d2.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x176cbfec39d4d7e5%3A0x4a13de31c25ed6aa!2sZombo%2C%20Uganda!5e0!3m2!1sen!2sug!4v1234567890!5m2!1sen!2sug"
+          allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Warr Girls Secondary School Location – Zombo Uganda">
+        </iframe>
+        <div class="map-footer">📍 <span>Warr Girls S.S.</span> — Warr Sub-county, Zombo District, West Nile, Uganda</div>
+      </div>
+      <div class="wa-cta-card">
+        <div class="wh">
+          <span class="wh-icon">💬</span>
+          <div class="wh-text"><strong>Chat on WhatsApp Now</strong><span>Fast replies during school hours</span></div>
+        </div>
+        <p>Ask about admissions, school fees, bursaries, or how to visit the school. Our team is ready to help you give your daughter the best education.</p>
+        <a href="https://wa.me/256700000000?text=Hello%20Sts.%20Peter%20%26%20Paul%20Warr%20Girls%20Secondary%20School%2C%20I%20would%20like%20to%20inquire%20about%3A" target="_blank" class="wa-cta-btn">💬 Start WhatsApp Chat</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="f-logo-row">
+        <div class="f-emblem"><span>WG</span></div>
+        <div><div class="f-school">Sts. Peter &amp; Paul Warr Girls</div><div class="f-sub">Secondary School · Zombo, Uganda</div></div>
+      </div>
+      <p>A Catholic-founded, government-aided girls' boarding school in Warr, Zombo District — empowering the girl child of West Nile through quality, affordable education.</p>
+      <div class="warr-badge">❀ "Where Girls Find Their Wings"</div>
+    </div>
+    <div class="f-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#about">About the School</a></li>
+        <li><a href="#academics">Academics</a></li>
+        <li><a href="#alumni">Distinguished Alumni</a></li>
+        <li><a href="#gallery">Photo Gallery</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#news">News &amp; Events</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h5>Academics</h5>
+      <ul>
+        <li><a href="#academics">O Level (S.1–S.4)</a></li>
+        <li><a href="#academics">A Level (S.5–S.6)</a></li>
+        <li><a href="#academics">Sciences</a></li>
+        <li><a href="#academics">Arts &amp; Humanities</a></li>
+        <li><a href="#academics">Home Economics</a></li>
+        <li><a href="#admissions">Bursaries</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#">📍 Warr, Zombo District</a></li>
+        <li><a href="#">📮 P.O. Box 15, Paidha-Nebbi</a></li>
+        <li><a href="#">🔢 EMIS: 300258</a></li>
+        <li><a href="https://wa.me/256700000000">💬 WhatsApp Us</a></li>
+        <li><a href="mailto:warrgirls@gmail.com">✉ Email Us</a></li>
+        <li><a href="https://facebook.com">f Facebook Page</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Sts. Peter &amp; Paul Warr Girls Secondary School. All rights reserved.</span>
+    <span>Designed &amp; Built by <a href="#">CLEAN Money Avenue Media &amp; Technology Ltd.</a></span>
+  </div>
+</footer>
+
+<!-- FLOATING WA BUTTON -->
+<div class="wa-float">
+  <div class="wa-tooltip2">💬 Chat with Warr Girls on WhatsApp</div>
+  <a href="https://wa.me/256700000000?text=Hello%20Warr%20Girls%20Secondary%20School%2C%20I%20would%20like%20to%20enquire%20about%20your%20school." target="_blank" class="wa-fab" title="Chat on WhatsApp">💬</a>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" onclick="closeLb(event)">
+  <div class="lb-inner">
+    <span class="lb-x" onclick="closeLb()">×</span>
+    <img id="lbImg" src="" alt="">
+    <div class="lb-label" id="lbLabel"></div>
+  </div>
+</div>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('on'),i*80); obs.unobserve(e.target); }
+  });
+},{threshold:.08});
+document.querySelectorAll('.rev,.rev-l,.rev-r').forEach(el=>obs.observe(el));
+
+// Lightbox
+function openLb(el,cap){
+  const src=el.querySelector('img').src.replace(/w=\d+/,'w=1400');
+  document.getElementById('lbImg').src=src;
+  document.getElementById('lbLabel').textContent=cap||'';
+  document.getElementById('lb').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function closeLb(e){
+  if(!e||e.target===document.getElementById('lb')||e.target.className==='lb-x'){
+    document.getElementById('lb').classList.remove('on');
+    document.body.style.overflow='';
+  }
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('lb').classList.remove('on');document.body.style.overflow='';}});
+
+// Mobile menu
+function toggleMenu(){
+  const m=document.getElementById('mobMenu');
+  m.style.display=m.style.display==='flex'?'none':'flex';
+}
+document.addEventListener('click',(e)=>{
+  const m=document.getElementById('mobMenu');
+  const h=document.querySelector('.ham');
+  if(m&&!m.contains(e.target)&&!h.contains(e.target))m.style.display='none';
+});
+
+// Active nav
+const secs=document.querySelectorAll('section[id],div[id]');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id;});
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    const href=a.getAttribute('href');
+    a.style.color=(href==='#'+cur)?'var(--rose)':'';
+    a.style.fontWeight=(href==='#'+cur)?'700':'';
+  });
+});
+
+// Stat counter
+function animateStats(){
+  document.querySelectorAll('.sb-item strong').forEach(el=>{
+    const txt=el.textContent;
+    const num=parseInt(txt.replace(/\D/g,''));
+    if(!isNaN(num)&&num>0&&num<5000){
+      let s=0;const step=Math.ceil(num/60);
+      const iv=setInterval(()=>{
+        s+=step;
+        if(s>=num){el.textContent=txt;clearInterval(iv);}
+        else el.textContent=s+(txt.includes('+')?' +':'');
+      },20);
+    }
+  });
+}
+const statObs=new IntersectionObserver(e=>{if(e[0].isIntersecting){animateStats();statObs.disconnect();}},{threshold:.3});
+const bar=document.querySelector('.stats-bar');
+if(bar)statObs.observe(bar);
+</script>
+</body>
+</html>
